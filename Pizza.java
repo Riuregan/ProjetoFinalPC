@@ -7,7 +7,8 @@ public class Pizza extends Produto {
     @Override
     public double calcularPreco() {
         // TODO Auto-generated method stub
-        return 0;
+
+        return 0.0;
     }
 
     @Override

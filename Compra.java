@@ -9,23 +9,44 @@ public class Compra {
     }
 
     public double somaTotal() {
-        double total = 2.0;
+        double total = 0.0;
         for (Produto b : carrinho) {
             total = total + b.calcularPreco();
         }
         return total;
     }
 
-    public void qtdDinheiroTotal(double x){
+    public void qtdDinheiroTotal(double x) {
         dinheiro = x;
     }
 
-    public double getDinheiroTotal(){
+    public String verCarrinho() {
+        String saida = "";
+        double total = 0.0;
+        for (Produto x : carrinho) {
+            saida += String.valueOf(x.getQuantidade()) + " do sabor numero " + String.valueOf(x.getSabor())
+                    + ", tamanho: " + x.getTamanho() + ", preço: " + Double.toString(x.calcularPreco()) + "\n";
+            total = total + x.calcularPreco();
+        }
+        saida = saida + "\nTotal a pagar: " + Double.toString(total);
+        return saida;
+    }
+
+    public double getDinheiroTotal() {
         return dinheiro;
     }
 
-    public void gastoDinheiro(double x){
-        dinheiro = dinheiro-x;
+    public void gastoDinheiro(double x) {
+        dinheiro = dinheiro - x;
 
     }
+
+    public void pressAnyKeyToContinue() {
+        System.out.println("Press Enter key to continue...");
+        try {
+            System.in.read();
+        } catch (Exception e) {
+        }
+    }
+
 }
