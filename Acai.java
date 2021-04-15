@@ -55,4 +55,24 @@ public class Acai extends Produto {
         return valor;
     }
 
+    @Override
+    public String nomeSabor() {
+        String saborNome = "";
+        if (sabor == 1) {
+            saborNome = "Acaí tradicional";
+
+        }
+
+        if (sabor == 2) {
+            saborNome = "Acaí com leite";
+
+        }
+
+        if (sabor == 3) {
+            saborNome = "Suco de acaí";
+
+        }
+        return saborNome;
+    }
+
 }

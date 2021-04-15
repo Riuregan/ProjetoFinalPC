@@ -20,15 +20,15 @@ public class Compra {
         dinheiro = x;
     }
 
-    public String verCarrinho() {
+    public String verCarrinho(double carteira) {
         String saida = "";
         double total = 0.0;
         for (Produto x : carrinho) {
-            saida += String.valueOf(x.getQuantidade()) + " do sabor numero " + String.valueOf(x.getSabor())
-                    + ", tamanho: " + x.getTamanho() + ", preço: " + Double.toString(x.calcularPreco()) + "\n";
+            saida += String.valueOf(x.getQuantidade()) + " " + x.nomeSabor() + ", tamanho: " + x.getTamanho()
+                    + ", preço: " + Double.toString(x.calcularPreco()) + "\n";
             total = total + x.calcularPreco();
         }
-        saida = saida + "\nTotal a pagar: " + Double.toString(total);
+        saida = saida + "\nTotal a pagar: " + Double.toString(total) + "\nDinheiro na carteira: " + carteira;
         return saida;
     }
 
@@ -47,6 +47,21 @@ public class Compra {
             System.in.read();
         } catch (Exception e) {
         }
+    }
+
+    public String realizarCompra(double valorCarteira, double pagamento) {
+        // ta errado essa funcao, os parametros nao correspondem com o resto do
+        // programa, depois corrigir
+        String resposta = "";
+        double troco = 0.0;
+        if (valorCarteira >= pagamento) {
+            troco = valorCarteira - pagamento;
+            resposta = ("Compra realizada com sucesso!\nSeu troco é de" + troco + "reais");
+        } else if (valorCarteira < pagamento) {
+            resposta = ("A conta bateu nâo em!!! Vai ter q lavar" + (troco % 10)
+                    + "pratos pra pagar a conta se não vamo chamar os omi fardado");
+        }
+        return resposta;
     }
 
 }

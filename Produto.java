@@ -35,4 +35,6 @@ public abstract class Produto {
 
     public abstract double ultimoGasto();
 
+    public abstract String nomeSabor();
+
 }

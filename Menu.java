@@ -4,6 +4,7 @@ public class Menu {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Compra gastos = new Compra();
+        double carteira = 0.0;
         double x = 0.0;
         int qual = 0;
 
@@ -13,6 +14,7 @@ public class Menu {
                     "----------------------------------------------------------------------\nSeja Bem vindo a Pizzaria do Henrique\nInstruçoes:\n1 -> Digite os numeros/letras correspondes antes de cada instrução para selecioná-la\n----------------------------------------------------------------------\n");
             System.out.println("Digite sua quantidade de dinheiro você trouxe para gastar:");
             x = input.nextInt();
+            carteira = x;
             gastos.qtdDinheiroTotal(x);
             sair = 1;
         }
@@ -37,9 +39,12 @@ public class Menu {
                     String tamanhoPizza = input.next();
                     System.out.println("----------------------------------------------------\nQuantidade :\n");
                     int quantidadePizza = input.nextInt();
-                    gastos.adicionarProduto(new Pizza(quantidadePizza, tamanhoPizza, saborPizza));
+                    Pizza pizza = new Pizza(quantidadePizza, tamanhoPizza, saborPizza);
+                    pizza.setSabor(saborPizza);
+                    gastos.adicionarProduto(pizza);
                     x = x - gastos.somaTotal();
                     System.out.println("Dinheiro restante:\n" + x);
+                    gastos.pressAnyKeyToContinue();
                 }
                 if (p == 2) {
                     System.out.println(
@@ -56,13 +61,41 @@ public class Menu {
                     gastos.adicionarProduto(acai);
                     x = x - gastos.somaTotal();
                     System.out.println("Dinheiro restante:\n" + x);
+                    gastos.pressAnyKeyToContinue();
+                }
+                if (p == 3) {
+                    System.out.println(
+                            "----------------------------------------------------\n 1 -> Coca-cola\n2 -> Guaraná Antarctica\n3 ->Fanta laranja");
+                    int saborrefri = input.nextInt();
+                    System.out.println(saborrefri);
+                    System.out.println(
+                            "----------------------------------------------------\ng/G -> Tamanho G\np/P -> Tamanho P\nm/M -> Tamanho M");
+                    String tamanhorefri = input.next();
+                    System.out.println("----------------------------------------------------\nQuantidade :\n");
+                    int quantidaderefri = input.nextInt();
+                    Refrigerante refri = new Refrigerante(quantidaderefri, tamanhorefri, saborrefri);
+                    refri.setSabor(saborrefri);
+                    gastos.adicionarProduto(refri);
+                    x = x - gastos.somaTotal();
+                    System.out.println("Dinheiro restante:\n" + x);
+                    gastos.pressAnyKeyToContinue();
                 }
 
             }
             if (qual == 2) {
                 input.nextLine();
-                System.out.println(gastos.verCarrinho());
+                System.out.println(gastos.verCarrinho(carteira));
                 gastos.pressAnyKeyToContinue();
+            }
+            if (qual == 3) {
+
+            }
+            if (qual == 4) {
+
+            }
+            if (qual == 5) {
+                System.out.println("Programa encerrado!");
+                System.exit(1);
             }
 
         }
