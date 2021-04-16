@@ -13,24 +13,24 @@ public class Acai extends Produto {
         if (sabor == 1) {
             // this.nomeSabor = "Acaí tradicional";
             if (tamanho.equals("g") || tamanho.equals("G")) {
-                valor = 34.20 * quantidade;
+                valor = 12.50 * quantidade;
             } else if (tamanho.equals("m") || tamanho.equals("M")) {
-                valor = 27.40 * quantidade;
+                valor = 10.30 * quantidade;
             } else if (tamanho.equals("p") || tamanho.equals("P")) {
-                valor = 23.50 * quantidade;
+                valor = 8.00 * quantidade;
             }
         }
 
         if (sabor == 2) {
             // this.nomeSabor = "Acaí com leite";
             if (tamanho.equals("g") || tamanho.equals("G")) {
-                valor = 35.20 * quantidade;
+                valor = 12.50 * quantidade;
 
             } else if (tamanho.equals("m") || tamanho.equals("M")) {
-                valor = 28.40 * quantidade;
+                valor = 10.30 * quantidade;
 
             } else if (tamanho.equals("p") || tamanho.equals("P")) {
-                valor = 24.50 * quantidade;
+                valor = 8.00 * quantidade;
 
             }
         }
@@ -38,20 +38,15 @@ public class Acai extends Produto {
         if (sabor == 3) {
             // this.nomeSabor = "Suco de acaí";
             if (tamanho.equals("g") || tamanho.equals("G")) {
-                valor = 35.20 * quantidade;
+                valor = 12.50 * quantidade;
 
             } else if (tamanho.equals("m") || tamanho.equals("M")) {
-                valor = 28.40 * quantidade;
+                valor = 10.30 * quantidade;
 
             } else if (tamanho.equals("p") || tamanho.equals("P")) {
-                valor = 24.50 * quantidade;
+                valor = 8.00 * quantidade;
             }
         }
-        return valor;
-    }
-
-    @Override
-    public double ultimoGasto() {
         return valor;
     }
 

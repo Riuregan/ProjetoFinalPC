@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Compra {
     private ArrayList<Produto> carrinho = new ArrayList<Produto>();
     double dinheiro = 0.0;
+    int cont = 1;
 
     public void adicionarProduto(Produto produto) {
         carrinho.add(produto);
@@ -23,6 +24,7 @@ public class Compra {
     public String verCarrinho(double carteira) {
         String saida = "";
         double total = 0.0;
+        cont = 1;
         for (Produto x : carrinho) {
             saida += String.valueOf(x.getQuantidade()) + " " + x.nomeSabor() + ", tamanho: " + x.getTamanho()
                     + ", preço: " + Double.toString(x.calcularPreco()) + "\n";
@@ -41,25 +43,14 @@ public class Compra {
 
     }
 
-    public void pressAnyKeyToContinue() {
-        System.out.println("Press Enter key to continue...");
-        try {
-            System.in.read();
-        } catch (Exception e) {
-        }
-    }
-
     public String realizarCompra(double valorCarteira, double pagamento) {
-        // ta errado essa funcao, os parametros nao correspondem com o resto do
-        // programa, depois corrigir
         String resposta = "";
         double troco = 0.0;
         if (valorCarteira >= pagamento) {
             troco = valorCarteira - pagamento;
-            resposta = ("Compra realizada com sucesso!\nSeu troco é de" + troco + "reais");
+            resposta = ("Compra realizada com sucesso!\nSeu troco é de " + troco + "reais");
         } else if (valorCarteira < pagamento) {
-            resposta = ("A conta bateu nâo em!!! Vai ter q lavar" + (troco % 10)
-                    + "pratos pra pagar a conta se não vamo chamar os omi fardado");
+            resposta = ("A conta ficou muito cara e você não tinha dinheiro suficiente para pagar, você foi obrigado a lavar pratos e saiu envergonhado, sem olhar para trás ");
         }
         return resposta;
     }

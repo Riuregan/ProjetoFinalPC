@@ -9,7 +9,6 @@ public class Pizza extends Produto {
     @Override
     public double calcularPreco() {
         if (sabor == 1) {
-            // this.nomeSabor = "Acaí tradicional";
             if (tamanho.equals("g") || tamanho.equals("G")) {
                 valor = 34.20 * quantidade;
             } else if (tamanho.equals("m") || tamanho.equals("M")) {
@@ -17,36 +16,33 @@ public class Pizza extends Produto {
             } else if (tamanho.equals("p") || tamanho.equals("P")) {
                 valor = 23.50 * quantidade;
             }
+
         }
 
         if (sabor == 2) {
-            // this.nomeSabor = "Acaí com leite";
             if (tamanho.equals("g") || tamanho.equals("G")) {
-                valor = 35.20 * quantidade;
+                valor = 34.20 * quantidade;
 
             } else if (tamanho.equals("m") || tamanho.equals("M")) {
-                valor = 28.40 * quantidade;
+                valor = 27.40 * quantidade;
 
             } else if (tamanho.equals("p") || tamanho.equals("P")) {
-                valor = 24.50 * quantidade;
-
+                valor = 23.50 * quantidade;
             }
         }
 
         if (sabor == 3) {
-            // this.nomeSabor = "Suco de acaí";
             if (tamanho.equals("g") || tamanho.equals("G")) {
-                valor = 35.20 * quantidade;
+                valor = 34.20 * quantidade;
 
             } else if (tamanho.equals("m") || tamanho.equals("M")) {
-                valor = 28.40 * quantidade;
+                valor = 27.40 * quantidade;
 
             } else if (tamanho.equals("p") || tamanho.equals("P")) {
-                valor = 24.50 * quantidade;
+                valor = 23.50 * quantidade;
             }
         }
         if (sabor == 4) {
-            // this.nomeSabor = "Acaí tradicional";
             if (tamanho.equals("g") || tamanho.equals("G")) {
                 valor = 34.20 * quantidade;
             } else if (tamanho.equals("m") || tamanho.equals("M")) {
@@ -57,38 +53,30 @@ public class Pizza extends Produto {
         }
 
         if (sabor == 5) {
-            // this.nomeSabor = "Acaí com leite";
             if (tamanho.equals("g") || tamanho.equals("G")) {
-                valor = 35.20 * quantidade;
+                valor = 34.20 * quantidade;
 
             } else if (tamanho.equals("m") || tamanho.equals("M")) {
-                valor = 28.40 * quantidade;
+                valor = 27.40 * quantidade;
 
             } else if (tamanho.equals("p") || tamanho.equals("P")) {
-                valor = 24.50 * quantidade;
+                valor = 23.50 * quantidade;
 
             }
         }
 
         if (sabor == 6) {
-            // this.nomeSabor = "Suco de acaí";
             if (tamanho.equals("g") || tamanho.equals("G")) {
-                valor = 35.20 * quantidade;
+                valor = 34.20 * quantidade;
 
             } else if (tamanho.equals("m") || tamanho.equals("M")) {
-                valor = 28.40 * quantidade;
+                valor = 27.40 * quantidade;
 
             } else if (tamanho.equals("p") || tamanho.equals("P")) {
-                valor = 24.50 * quantidade;
+                valor = 23.50 * quantidade;
             }
         }
         return valor;
-    }
-
-    @Override
-    public double ultimoGasto() {
-        // TODO Auto-generated method stub
-        return 0;
     }
 
     @Override

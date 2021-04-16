@@ -10,46 +10,40 @@ public class Refrigerante extends Produto {
     public double calcularPreco() {
         if (sabor == 1) {
             if (tamanho.equals("g") || tamanho.equals("G")) {
-                valor = 34.20 * quantidade;
+                valor = 8.20 * quantidade;
             } else if (tamanho.equals("m") || tamanho.equals("M")) {
-                valor = 27.40 * quantidade;
+                valor = 6.20 * quantidade;
             } else if (tamanho.equals("p") || tamanho.equals("P")) {
-                valor = 23.50 * quantidade;
+                valor = 4.20 * quantidade;
             }
         }
 
         if (sabor == 2) {
             if (tamanho.equals("g") || tamanho.equals("G")) {
-                valor = 35.20 * quantidade;
+                valor = 8.20 * quantidade;
 
             } else if (tamanho.equals("m") || tamanho.equals("M")) {
-                valor = 28.40 * quantidade;
+                valor = 6.20 * quantidade;
 
             } else if (tamanho.equals("p") || tamanho.equals("P")) {
-                valor = 24.50 * quantidade;
+                valor = 4.20 * quantidade;
 
             }
         }
 
         if (sabor == 3) {
             if (tamanho.equals("g") || tamanho.equals("G")) {
-                valor = 35.20 * quantidade;
+                valor = 8.20 * quantidade;
 
             } else if (tamanho.equals("m") || tamanho.equals("M")) {
-                valor = 28.40 * quantidade;
+                valor = 6.20 * quantidade;
 
             } else if (tamanho.equals("p") || tamanho.equals("P")) {
-                valor = 24.50 * quantidade;
+                valor = 4.20 * quantidade;
             }
 
         }
         return valor;
-    }
-
-    @Override
-    public double ultimoGasto() {
-        // TODO Auto-generated method stub
-        return 0;
     }
 
     @Override
